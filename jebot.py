@@ -128,7 +128,8 @@ async def callback_query_ytdl_audio(_, callback_query):
         ydl_opts = {
             'format': 'bestaudio',
             'outtmpl': '%(title)s - %(extractor)s-%(id)s.%(ext)s',
-            'writethumbnail': True
+            'writethumbnail': True,
+            'audio-format':'mp3'
         }
         with YoutubeDL(ydl_opts) as ydl:
             message = callback_query.message
